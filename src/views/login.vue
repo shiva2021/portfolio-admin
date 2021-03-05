@@ -1,14 +1,14 @@
 <template>
-	<div class="container">
-		<h1 class="is-size-2">This is the login page</h1>
-	</div>
+	<Login />
 </template>
 
 <script>
+import Login from "@/components/login";
 export default {
-	created() {
-		debugger;
+	components: {
+		Login,
 	},
+	created() {},
 };
 </script>
 
