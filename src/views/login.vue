@@ -8,6 +8,7 @@ export default {
 	components: {
 		Login,
 	},
+
 	created() {},
 };
 </script>
