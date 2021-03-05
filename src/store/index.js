@@ -44,6 +44,18 @@ export default new Vuex.Store({
 
     async LOGOUT({ commit }, payload) {
       commit("logout");
+    },
+
+    async GET_USER({ commit }) {
+      try {
+        let { data } = await axios.get('/api/get/user');
+        if (!data.err) {
+          commit("setUser", data.user);
+          commit("setAuthenticated", data.isAuthenticated);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   modules: {

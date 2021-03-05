@@ -7,6 +7,9 @@ import Buefy from 'buefy'
 Vue.use(Buefy)
 require('@/scss/_main.scss');
 
+Vue.filter("AWS", (string) => {
+  return `https://barter-vue-app.s3.ap-south-1.amazonaws.com/${string}`;
+})
 
 
 Vue.config.productionTip = false
