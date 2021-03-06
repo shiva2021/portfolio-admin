@@ -16,13 +16,15 @@ const routes = [
   {
     path: "/",
     name: "home",
-    redirect: "/app",
+    component: function () {
+      return import(/* webpackChunkName: "app-home" */ '../views/home.vue')
+    },
   },
   {
     path: '/app',
     name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "app-home" */ '../views/home.vue')
+      return import(/* webpackChunkName: "app-home" */ '../views/apphome.vue')
     },
     children: [...pfRoutes, ...btRoutes]
   }
