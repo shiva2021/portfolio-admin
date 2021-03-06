@@ -107,8 +107,9 @@ export default {
 		},
 		changeApp(app) {
 			this.$store.commit("setCurrentApp", app);
-			localStorage.setItem("app-name", app.text);
+			localStorage.setItem("app-name", JSON.stringify(app));
 			console.log(this.currentApp);
+			this.$router.push("/portfolio/home");
 		},
 	},
 };

@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import pfRoutes from './portfolio';
+import btRoutes from './barter';
 
 Vue.use(VueRouter)
 
@@ -12,11 +14,17 @@ const routes = [
     }
   },
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
+    redirect: "/app",
+  },
+  {
+    path: '/app',
+    name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "home" */ '../views/home.vue')
-    }
+      return import(/* webpackChunkName: "app-home" */ '../views/home.vue')
+    },
+    children: [...pfRoutes]
   }
 ]
 

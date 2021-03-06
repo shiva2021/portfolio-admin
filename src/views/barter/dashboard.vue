@@ -1,9 +1,7 @@
 <template>
-	<section class="section is-medium">
-		<div class="container">
-			<h1 class="title">{{ currentApp }}</h1>
-		</div>
-	</section>
+	<div>
+		<h1 class="title">This is a dashboard for {{ currentApp.name }}</h1>
+	</div>
 </template>
 
 <script>
