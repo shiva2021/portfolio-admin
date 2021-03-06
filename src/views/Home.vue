@@ -28,7 +28,6 @@ export default {
 		...mapGetters(["user", "isAuthenticated", "currentApp"]),
 	},
 	created() {
-		// debugger;
 		console.log(this.currentApp);
 	},
 	data() {

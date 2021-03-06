@@ -4,9 +4,7 @@
 
 <script>
 export default {
-	created() {
-		debugger;
-	},
+	created() {},
 };
 </script>
 

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import pfRoutes from './portfolio';
 import btRoutes from './barter';
-
+import store from '../store'
 Vue.use(VueRouter)
 
 const routes = [
@@ -37,6 +37,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log("store==> " + store.state.isAuthenticated);
   if (to.name !== 'login' && !localStorage.getItem('admin-token')) next({ name: 'login' })
   else next()
 })
