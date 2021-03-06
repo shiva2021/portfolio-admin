@@ -52,7 +52,6 @@ export default {
 		async saveData() {
 			try {
 				await this.$store.dispatch("LOGIN", this.creds);
-				debugger;
 				if (this.isAuthenticated) this.$router.push("/");
 			} catch (error) {}
 		},

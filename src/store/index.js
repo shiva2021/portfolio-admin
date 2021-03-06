@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: "",
-    isAuthenticated: false
+    isAuthenticated: false,
+    currentApp: ""
   },
   getters: {
     user(state) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     isAuthenticated(state) {
       return state.isAuthenticated;
+    },
+    currentApp(state) {
+      return state.currentApp;
     }
   },
   mutations: {
@@ -30,6 +34,9 @@ export default new Vuex.Store({
       localStorage.removeItem("admin-token");
       state.user = "";
       state.isAuthenticated = false;
+    },
+    setCurrentApp(state, app) {
+      state.currentApp = app;
     }
   },
   actions: {

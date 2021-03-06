@@ -1,8 +1,8 @@
 <template>
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
+	<nav class="navbar has-background-white" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand ml-4">
 			<a class="navbar-item" href="https://bulma.io">
-				<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+				<h1 class="is-size-5">Admin App</h1>
 			</a>
 
 			<a role="button" class="navbar-burger" @click="toggle" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -13,64 +13,23 @@
 		</div>
 
 		<div id="navbarBasicExample" class="navbar-menu">
-			<div class="navbar-start">
-				<a class="navbar-item">
-					Home
-				</a>
-
-				<a class="navbar-item">
-					Documentation
-				</a>
-
-				<div data-target="more" class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						More
+			<div class="navbar-end mr-4">
+				<div data-target="app" class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link" v-if="!currentApp">
+						Application
 					</a>
-
-					<div class="navbar-dropdown" id="more">
-						<a class="navbar-item">
-							About
-						</a>
-						<a class="navbar-item">
-							Jobs
-						</a>
-						<a class="navbar-item">
-							Contact
-						</a>
-						<hr class="navbar-divider" />
-						<a class="navbar-item">
-							Report an issue
+					<a class="navbar-link" v-else>
+						{{ currentApp.name }}
+					</a>
+					<div class="navbar-dropdown" id="app">
+						<a class="navbar-item" :data-app="app.text" @click.prevent="changeApp(app)" v-for="(app, i) in apps" :key="i">
+							{{ app.name }}
 						</a>
 					</div>
 				</div>
-
-				<div data-target="new" class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-						New
-					</a>
-
-					<div class="navbar-dropdown" id="new">
-						<a class="navbar-item">
-							About
-						</a>
-						<a class="navbar-item">
-							Jobs
-						</a>
-						<a class="navbar-item">
-							Contact
-						</a>
-						<hr class="navbar-divider" />
-						<a class="navbar-item">
-							Report an issue
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="navbar-end">
 				<div data-target="logout" class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
-						<div class="is-flex">
+						<div class="is-flex mt-2">
 							<figure class="image is-32x32 mr-2">
 								<img class="is-rounded" :src="user.profile_pic | AWS" />
 							</figure>
@@ -79,7 +38,7 @@
 					</a>
 
 					<div class="navbar-dropdown" id="logout">
-						<a class="navbar-item">
+						<a class="navbar-item" @click="logout">
 							Logout
 						</a>
 					</div>
@@ -93,7 +52,21 @@
 import { mapGetters } from "vuex";
 export default {
 	computed: {
-		...mapGetters(["user", "isAuthenticated"]),
+		...mapGetters(["user", "isAuthenticated", "currentApp"]),
+	},
+	data() {
+		return {
+			apps: [
+				{
+					name: "Barter",
+					text: "barter",
+				},
+				{
+					name: "Portfolio",
+					text: "portfolio",
+				},
+			],
+		};
 	},
 	created() {
 		console.log(this.user);
@@ -128,7 +101,15 @@ export default {
 		toggle() {
 			document.querySelector(".navbar-menu").classList.toggle("is-active");
 		},
-		toggleMenu() {},
+		logout() {
+			this.$store.dispatch("LOGOUT");
+			this.$router.push("/login");
+		},
+		changeApp(app) {
+			this.$store.commit("setCurrentApp", app);
+			localStorage.setItem("app-name", app.text);
+			console.log(this.currentApp);
+		},
 	},
 };
 </script>
