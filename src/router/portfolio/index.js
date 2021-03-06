@@ -1,10 +1,9 @@
+const dashboard = () => import('../../views/portfolio/dashboard.vue')
 const pfRoutes = [
   {
-    path: '/portfolio/home',
+    path: '/portfolio/dashboard',
     name: 'portfolio-home',
-    component: function () {
-      return import(/* webpackChunkName: "portfolio-home" */ '../../views/portfolio/dashboard.vue')
-    }
+    component: dashboard
   }
 ]
 

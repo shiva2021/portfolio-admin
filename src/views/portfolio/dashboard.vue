@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1 class="title">This is a dashboard for {{ currentApp.name }}</h1>
+		<h1 class="title">This is a dashboard for Portfolio Application</h1>
 	</div>
 </template>
 

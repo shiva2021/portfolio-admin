@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<h1 class="title">This is a dashboard for {{ currentApp.name }}</h1>
-	</div>
+	<section class="section">
+		<h1 class="title">This is a dashboard for Board</h1>
+	</section>
 </template>
 
 <script>

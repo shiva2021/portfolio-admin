@@ -1,9 +1,9 @@
 const barterRoutes = [
   {
-    path: '/barter/home',
+    path: '/barter/dashboard',
     name: 'barter-home',
     component: function () {
-      return import(/* webpackChunkName: "barter-home" */ '../../views/barter/dashboard.vue')
+      return import(/* webpackChunkName: "barter-dashboard" */ '../../views/barter/dashboard.vue')
     }
   }
 ]
