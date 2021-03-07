@@ -17,7 +17,6 @@ export default {
 		...mapGetters(["users", "isAuthenticated"]),
 	},
 	async created() {
-		console.log(this.isAuthenticated);
 		if (!this.isAuthenticated) await this.$store.dispatch("GET_USER");
 	},
 };

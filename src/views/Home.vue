@@ -27,9 +27,7 @@ export default {
 	computed: {
 		...mapGetters(["user", "isAuthenticated", "currentApp"]),
 	},
-	created() {
-		console.log(this.currentApp);
-	},
+	created() {},
 	data() {
 		return {
 			apps: [

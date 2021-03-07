@@ -68,9 +68,7 @@ export default {
 			],
 		};
 	},
-	created() {
-		console.log(this.user);
-	},
+
 	mounted() {
 		/** The jQuery will trigger only at mobile viewport */
 		if (window.matchMedia("(max-width: 767px)").matches) {
