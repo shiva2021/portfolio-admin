@@ -7,7 +7,17 @@ export default new Vuex.Store({
   state: {
     user: "",
     isAuthenticated: false,
-    currentApp: ""
+    currentApp: "",
+    apps: [
+      {
+        name: 'Portfolio',
+        text: 'portfolio'
+      },
+      {
+        name: 'Barter',
+        text: 'barter'
+      }
+    ]
   },
   getters: {
     user(state) {

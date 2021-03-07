@@ -10,7 +10,9 @@ export default {
 	computed: {
 		...mapGetters(["user", "isAuthenticated", "currentApp"]),
 	},
-	created() {},
+	created() {
+		console.log(this.currentApp);
+	},
 };
 </script>
 

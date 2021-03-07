@@ -19,7 +19,6 @@ export default {
 	async created() {
 		console.log(this.isAuthenticated);
 		if (!this.isAuthenticated) await this.$store.dispatch("GET_USER");
-		if (localStorage.getItem("app-name")) this.$store.commit("setCurrentApp", JSON.parse(localStorage.getItem("app-name")));
 	},
 };
 </script>

@@ -37,7 +37,14 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log("store==> " + store.state.isAuthenticated);
+  let string = to.name.split("-")[0];
+  let apps = store.state.apps;
+
+  if (to.name.indexOf(string) > -1) {
+    let currentApp = apps.find((a) => { return a.text === string });
+    store.commit("setCurrentApp", currentApp);
+  } else store.commit("setCurrentApp", {});
+
   if (to.name !== 'login' && !localStorage.getItem('admin-token')) next({ name: 'login' })
   else next()
 })
