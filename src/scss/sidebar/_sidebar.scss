@@ -71,10 +71,6 @@ $li-left-margin: 2rem;
   cursor: pointer;
 }
 
-.child-list {
-  display: none;
-}
-
 .rotate-icon {
   transform: rotate(-90deg);
   animation: roll 0.5s;
@@ -89,6 +85,18 @@ $li-left-margin: 2rem;
   }
 }
 
+// Add transtion to the sidebar menu items
+.child-list {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0.15s;
+  -moz-transition: all 0.3s ease 0.15s;
+  -o-transition: all 0.3s ease 0.15s;
+  -ms-transition: all 0.3s ease 0.15s;
+  transition: all 0.3s ease 0.15s;
+}
+
 .has-list-active {
-  display: block !important;
+  opacity: 1;
+  height: auto;
 }

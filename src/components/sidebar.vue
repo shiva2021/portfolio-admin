@@ -58,11 +58,6 @@ export default {
 
 					if ($target && target !== "true") {
 						$target.classList.toggle("has-list-active");
-						// if ($target.style.display === "block") {
-						// 	$target.style.display = "none";
-						// } else {
-						// 	$target.style.display = "block";
-						// }
 
 						//Rotate Icon
 						let icon = el.getElementsByClassName("left-icon");
