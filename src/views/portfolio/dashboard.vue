@@ -2,23 +2,44 @@
 	<div>
 		<!-- Sidebar -->
 		<div id="idSidebar" class="sidebar">
-			<a href="">
-				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
-				<span class="is-size-6">Item1</span>
-				<i class="fas fa-chevron-left left-icon font-color"></i>
-			</a>
-			<a href="">
-				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
-				<span class="is-size-6">Item1</span>
-				<i class="fas fa-chevron-left left-icon font-color"></i>
-			</a>
-			<a href="">
-				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
-				<span class="is-size-6">Item1</span>
-				<i class="fas fa-chevron-left left-icon font-color"></i>
-			</a>
-			<a href="">Item4</a>
-			<a href="">Item5</a>
+			<ul class="sidebar--parent">
+				<li>
+					<a href="">
+						<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+						<span class="is-size-6">Item1</span>
+						<i class="fas fa-chevron-left left-icon font-color"></i>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+						<span class="is-size-6">Item1</span>
+						<i class="fas fa-chevron-left left-icon font-color"></i>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+						<span class="is-size-6">Item1</span>
+						<i class="fas fa-chevron-left left-icon font-color"></i>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+						<span class="is-size-6">Item1</span>
+						<i class="fas fa-chevron-left left-icon font-color"></i>
+					</a>
+					<ul>
+						<li>
+							<a href="">
+								<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+								<span class="is-size-6">Sub-Item1</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
 </template>

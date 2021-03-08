@@ -1,0 +1,57 @@
+.sidebar {
+  & .sidebar--parent {
+    background-color: #324150;
+    height: 100%;
+    width: 17rem;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    transition: 0.5s;
+
+    & li {
+      display: block;
+      margin: 1rem 1rem 1rem 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #3d4957;
+
+      & a {
+        color: #b4bcc8;
+        font-weight: 100;
+        font-family: inherit;
+      }
+
+      & a:hover {
+        color: #f1f1f1;
+      }
+    }
+
+    & li:first-child {
+      margin-top: 1.5rem;
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  // .sidebar {
+  //   padding-top: 15px;
+  // }
+  // .sidebar a {
+  //   font-size: 18px;
+  // }
+}
+
+.icon-spacing {
+  margin: 0 6px 0 0;
+}
+
+.font-color {
+  color: $font-color !important;
+}
+
+.left-icon {
+  margin: 0 0 0 50%;
+}
