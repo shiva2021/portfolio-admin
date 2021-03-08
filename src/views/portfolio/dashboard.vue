@@ -89,18 +89,4 @@ export default {
 hr {
 	background-color: #3d4957;
 }
-
-.has-children ul {
-	display: none;
-	transition: display 3s;
-}
-
-.rotate-icon {
-	transition: 0.5s;
-	transform: rotate(-90deg);
-}
-
-.has-list-active {
-	display: block !important;
-}
 </style>
