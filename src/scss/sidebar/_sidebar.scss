@@ -1,3 +1,5 @@
+$li-left-margin: 2rem;
+
 .sidebar {
   & .sidebar--parent {
     background-color: #324150;
@@ -11,13 +13,13 @@
     transition: 0.5s;
 
     & li {
-      display: block;
-      margin: 1rem 1rem 1rem 2rem;
+      margin: 1rem 1rem 1rem $li-left-margin;
       padding-top: 1rem;
       border-top: 1px solid #3d4957;
 
       & a {
         color: #b4bcc8;
+        width: 70%;
         font-weight: 100;
         font-family: inherit;
       }
@@ -53,12 +55,19 @@
 }
 
 .left-icon {
-  margin: 0 0 0 50%;
+  // margin-left: 30%;
+  // // margin-left: calc(li-width - a-width);
+  // position: relative;
+  // top: 0.1rem;
+  // left: 0rem;
+}
+
+.has-children {
+  width: 100%;
 }
 
 .has-children ul {
   display: none;
-  transition: display 3s;
 }
 
 .rotate-icon {
