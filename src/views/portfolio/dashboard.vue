@@ -1,6 +1,6 @@
 <template>
 	<div class="dashboard">
-		<Sidebar></Sidebar>
+		<Sidebar :navitems="items" @onNavigate="onNavigate"></Sidebar>
 	</div>
 </template>
 
@@ -9,6 +9,38 @@ import Sidebar from "@/components/sidebar.vue";
 export default {
 	components: {
 		Sidebar,
+	},
+	data() {
+		return {
+			items: [
+				{
+					name: "Dashboard",
+					target: "",
+					children: [],
+					icon: "fas fa-chart-line",
+					hasChevron: false,
+				},
+				{
+					name: "Manage Content",
+					target: "content",
+					children: [
+						{
+							name: "Add Content",
+							children: [],
+							icon: "fas fa-plus",
+							hasChevron: false,
+						},
+					],
+					icon: "fas fa-heading",
+					hasChevron: true,
+				},
+			],
+		};
+	},
+	methods: {
+		onNavigate(item) {
+			console.log(item.name);
+		},
 	},
 };
 </script>

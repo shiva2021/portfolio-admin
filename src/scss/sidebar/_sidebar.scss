@@ -70,12 +70,8 @@ $li-left-margin: 2rem;
   color: $font-color !important;
 }
 
-.left-icon {
-  // margin-left: 30%;
-  // // margin-left: calc(li-width - a-width);
-  // position: relative;
-  // top: 0.1rem;
-  // left: 0rem;
+.left-icon:hover {
+  cursor: pointer;
 }
 
 // .has-children {
