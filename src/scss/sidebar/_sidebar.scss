@@ -1,6 +1,14 @@
 $li-left-margin: 2rem;
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
 
-.sidebar {
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+
   & .sidebar--parent {
     background-color: #324150;
     height: 100%;
@@ -27,6 +35,10 @@ $li-left-margin: 2rem;
       & a:hover {
         color: #f1f1f1;
       }
+
+      & div .arrow {
+        width: 30%;
+      }
     }
 
     & li:first-child {
@@ -36,6 +48,10 @@ $li-left-margin: 2rem;
     }
   }
 }
+
+// .arrow {
+//   width: 30%;
+// }
 
 @media screen and (max-height: 450px) {
   // .sidebar {
@@ -62,9 +78,9 @@ $li-left-margin: 2rem;
   // left: 0rem;
 }
 
-.has-children {
-  width: 100%;
-}
+// .has-children {
+//   width: 100%;
+// }
 
 .has-children ul {
   display: none;

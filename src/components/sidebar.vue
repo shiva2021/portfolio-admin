@@ -1,26 +1,29 @@
 <template>
-	<div>
-		<!-- Sidebar -->
-		<!-- <div id="idSidebar" class="sidebar"> -->
-		<ul class="sidebar--parent">
-			<li v-for="(item, i) in sidenav" :key="i" :data-target="item.target" class="has-children is-flex">
-				<a href="javascript:void(0)">
-					<i :class="`${item.icon} is-size-6 mr-3 font-color`"></i>
-					<span class="is-size-6">{{ item.name }}</span>
-				</a>
-				<i v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
-				<ul :id="item.target" v-if="item.children.length > 0">
-					<li v-for="(child, i) in item.children" :key="i">
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<ul class="sidebar--parent">
+				<li v-for="(item, i) in sidenav" :key="i" :data-target="item.target" class="has-children">
+					<div class="is-flex">
 						<a href="javascript:void(0)">
-							<i :class="`${child.icon} is-size-6 mr-3 font-color`"></i>
-							<span class="is-size-6">{{ child.name }}</span>
+							<i :class="`${item.icon} is-size-6 mr-3 font-color`"></i>
+							<span class="is-size-6">{{ item.name }}</span>
 						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+						<div class="has-text-right arrow">
+							<i v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
+						</div>
+					</div>
+					<ul :id="item.target" v-if="item.children.length > 0">
+						<li v-for="(child, i) in item.children" :key="i">
+							<a href="javascript:void(0)">
+								<i :class="`${child.icon} is-size-6 mr-3 font-color`"></i>
+								<span class="is-size-6">{{ child.name }}</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 	</div>
-	<!-- </div> -->
 </template>
 
 <script>
