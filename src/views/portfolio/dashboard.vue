@@ -2,14 +2,22 @@
 	<div>
 		<!-- Sidebar -->
 		<div id="idSidebar" class="sidebar">
-			<a href="">Item1</a>
-			<hr />
-			<a href="">Item2</a>
-			<hr />
-			<a href="">Item3</a>
-			<hr />
+			<a href="">
+				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+				<span class="is-size-6">Item1</span>
+				<i class="fas fa-chevron-left left-icon font-color"></i>
+			</a>
+			<a href="">
+				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+				<span class="is-size-6">Item1</span>
+				<i class="fas fa-chevron-left left-icon font-color"></i>
+			</a>
+			<a href="">
+				<i class="fas fa-chart-line is-size-6 mr-3 font-color"></i>
+				<span class="is-size-6">Item1</span>
+				<i class="fas fa-chevron-left left-icon font-color"></i>
+			</a>
 			<a href="">Item4</a>
-			<hr />
 			<a href="">Item5</a>
 		</div>
 	</div>
@@ -26,6 +34,6 @@ export default {
 
 <style lang="scss" scoped>
 hr {
-	background-color: $primary-dark;
+	background-color: #3d4957;
 }
 </style>
