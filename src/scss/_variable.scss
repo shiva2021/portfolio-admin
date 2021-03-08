@@ -1,10 +1,12 @@
 // Set your colors
-$primary: #222121;
+$primary: #273643;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
+
+$dark-slate-blue: #3d348b;
 
 // Lists and maps
 $custom-colors: null !default;
@@ -73,3 +75,14 @@ $colors: mergeColorMaps(
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+
+// Navbar Variables
+$navbar-item-color: #f1f1f1;
+$navbar-item-active-color: #f1f1f1;
+$navbar-background-color: #273643;
+$navbar-item-hover-background-color: #3f4f62;
+$navbar-item-hover-color: $white;
+$navbar-dropdown-arrow: #f1f1f1;
+$navbar-tab-active-color: #f1f1f1;
+$navbar-tab-active-background-color: #273643;
+$navbar-dropdown-background-color: $primary;

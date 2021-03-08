@@ -1,6 +1,17 @@
 <template>
 	<div>
-		<h1 class="title">This is a dashboard for Portfolio Application</h1>
+		<!-- Sidebar -->
+		<div id="idSidebar" class="sidebar">
+			<a href="">Item1</a>
+			<hr />
+			<a href="">Item2</a>
+			<hr />
+			<a href="">Item3</a>
+			<hr />
+			<a href="">Item4</a>
+			<hr />
+			<a href="">Item5</a>
+		</div>
 	</div>
 </template>
 
@@ -13,4 +24,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+hr {
+	background-color: $primary-dark;
+}
+</style>

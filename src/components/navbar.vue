@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar has-background-white" role="navigation" aria-label="main navigation">
+	<nav class="navbar nav-background-color" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand ml-4">
 			<a class="navbar-item" href="https://bulma.io">
 				<h1 class="is-size-5">Admin App</h1>
@@ -14,14 +14,14 @@
 
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-end mr-4">
-				<div data-target="app" class="navbar-item has-dropdown is-hoverable">
+				<div data-target="apps" class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link" v-if="!currentApp">
 						Application
 					</a>
 					<a class="navbar-link" v-else>
 						{{ currentApp.name }}
 					</a>
-					<div class="navbar-dropdown" id="app">
+					<div class="navbar-dropdown" id="apps">
 						<a class="navbar-item" :data-app="app.text" @click.prevent="changeApp(app)" v-for="(app, i) in apps" :key="i">
 							{{ app.name }}
 						</a>
@@ -30,8 +30,8 @@
 				<div data-target="logout" class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
 						<div class="is-flex mt-2">
-							<figure class="image is-32x32 mr-2">
-								<img class="is-rounded" :src="user.profile_pic | AWS" />
+							<figure v-if="user.profile_pic" class="image is-32x32 mr-2">
+								<img alt="No Image Found" class="is-rounded" :src="user.profile_pic | AWS" />
 							</figure>
 							{{ user.fullname }}
 						</div>
@@ -125,8 +125,8 @@ export default {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	text-align: center;
 }
 

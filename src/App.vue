@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="idApp">
 		<div id="navbar">
 			<Navbar v-if="isAuthenticated"></Navbar>
 		</div>

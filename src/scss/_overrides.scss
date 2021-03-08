@@ -1,0 +1,39 @@
+.sidebar {
+  background-color: #324150;
+  height: 100%;
+  width: 17rem;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  transition: 0.5s;
+  & a {
+    color: #f1f1f1;
+    display: block;
+    margin: 1rem 0 1rem 5rem;
+    font-weight: 500;
+    font-family: inherit;
+  }
+
+  & a:first-child {
+    margin-top: 1.5rem;
+  }
+
+  & a:hover {
+    color: #f1f1f1;
+  }
+}
+
+// @media screen and (max-height: 450px) {
+//   .sidenav {
+//     padding-top: 15px;
+//   }
+//   .sidenav a {
+//     font-size: 18px;
+//   }
+// }
+
+.dark-slate-blue {
+  background-color: $dark-slate-blue;
+}
