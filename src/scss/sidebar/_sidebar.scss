@@ -8,6 +8,7 @@ $li-left-margin: 2rem;
 #sidebar {
   min-width: 250px;
   max-width: 250px;
+  transition: all 2s;
 
   & .sidebar--parent {
     background-color: #324150;
@@ -49,10 +50,6 @@ $li-left-margin: 2rem;
   }
 }
 
-// .arrow {
-//   width: 30%;
-// }
-
 @media screen and (max-height: 450px) {
   // .sidebar {
   //   padding-top: 15px;
@@ -74,17 +71,22 @@ $li-left-margin: 2rem;
   cursor: pointer;
 }
 
-// .has-children {
-//   width: 100%;
-// }
-
-.has-children ul {
+.child-list {
   display: none;
 }
 
 .rotate-icon {
-  transition: 0.5s;
   transform: rotate(-90deg);
+  animation: roll 0.5s;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
 }
 
 .has-list-active {

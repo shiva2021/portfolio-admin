@@ -12,7 +12,7 @@
 							<i v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
 						</div>
 					</div>
-					<ul data-child="true" :id="item.target" v-if="item.children.length > 0">
+					<ul data-child="true" :id="item.target" class="child-list" v-if="item.children.length > 0">
 						<li v-for="(child, i) in item.children" :key="i">
 							<a href="javascript:void(0)" @click.prevent="onItemClick(child)">
 								<i :class="`${child.icon} is-size-6 mr-3 font-color`"></i>
@@ -58,6 +58,11 @@ export default {
 
 					if ($target && target !== "true") {
 						$target.classList.toggle("has-list-active");
+						// if ($target.style.display === "block") {
+						// 	$target.style.display = "none";
+						// } else {
+						// 	$target.style.display = "block";
+						// }
 
 						//Rotate Icon
 						let icon = el.getElementsByClassName("left-icon");
