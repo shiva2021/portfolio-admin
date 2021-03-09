@@ -1,6 +1,9 @@
 <template>
 	<div class="dashboard">
 		<Sidebar :navitems="items" @onNavigate="onNavigate"></Sidebar>
+		<section class="section is-medium">
+			<h1>This is the Dashboard</h1>
+		</section>
 	</div>
 </template>
 
