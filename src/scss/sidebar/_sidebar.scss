@@ -85,6 +85,20 @@ $li-left-margin: 2rem;
   }
 }
 
+.rotate-icon-rev {
+  transform: rotate(0);
+  animation: roll-rev 0.5s;
+}
+
+@keyframes roll-rev {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 // Add transtion to the sidebar menu items
 .child-list {
   height: 0;

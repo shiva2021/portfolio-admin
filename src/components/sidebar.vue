@@ -9,7 +9,7 @@
 							<span class="is-size-6">{{ item.name }}</span>
 						</a>
 						<div :data-target="item.target" class="has-text-right arrow">
-							<i v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
+							<i :id="`iconId${item.target}`" v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
 						</div>
 					</div>
 					<ul data-child="true" :id="item.target" class="child-list" v-if="item.children.length > 0">
@@ -38,10 +38,6 @@ export default {
 			type: Array,
 			required: true,
 		},
-		// onItemClick: {
-		// 	type: Function,
-		// 	required: true,
-		// },
 	},
 
 	data() {
@@ -61,7 +57,19 @@ export default {
 
 						//Rotate Icon
 						let icon = el.getElementsByClassName("left-icon");
-						icon[0].classList.toggle("rotate-icon");
+						icon = icon[`iconId${target}`];
+
+						if (icon) {
+							if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
+								icon.classList.toggle("rotate-icon");
+							} else if (icon.classList.contains("rotate-icon")) {
+								icon.classList.add("rotate-icon-rev");
+								icon.classList.remove("rotate-icon");
+							} else {
+								icon.classList.add("rotate-icon");
+								icon.classList.remove("rotate-icon-rev");
+							}
+						}
 					}
 				});
 			});
