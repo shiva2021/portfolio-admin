@@ -56,8 +56,7 @@ export default {
 						$target.classList.toggle("has-list-active");
 
 						//Rotate Icon
-						let icon = el.getElementsByClassName("left-icon");
-						icon = icon[`iconId${target}`];
+						let icon = el.getElementsByClassName("left-icon") ? el.getElementsByClassName("left-icon")[`iconId${target}`] : "";
 
 						if (icon) {
 							if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
