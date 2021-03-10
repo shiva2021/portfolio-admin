@@ -24,6 +24,10 @@ body {
 
   & .sidebar--parent {
     display: none;
+
+    &.is-not-hidden {
+      display: block;
+    }
   }
 
   & .sidebar--parent li:first-child {
@@ -60,15 +64,6 @@ body {
     border-top: none;
     padding-top: 0;
   }
-}
-
-@media screen and (max-height: 450px) {
-  // .sidebar {
-  //   padding-top: 15px;
-  // }
-  // .sidebar a {
-  //   font-size: 18px;
-  // }
 }
 
 .icon-spacing {
