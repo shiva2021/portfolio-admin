@@ -2,6 +2,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<ul class="sidebar--parent">
+				<li href="javascript:void(0)" class="closebtn is-size-3" @click="closeNav">&times;</li>
 				<li v-for="(item, i) in navitems" :key="i" :data-target="item.target" class="has-children">
 					<div class="is-flex">
 						<a href="javascript:void(0)" @click.prevent="onItemClick(item)">
@@ -38,6 +39,10 @@ export default {
 	props: {
 		navitems: {
 			type: Array,
+			required: true,
+		},
+		closeNav: {
+			type: Function,
 			required: true,
 		},
 	},

@@ -1,23 +1,28 @@
 $li-left-margin: 2rem;
-.wrapper {
-  // display: flex;
-  // width: 100%;
-  // align-items: stretch;
-}
 
-#sidebar {
-  // min-width: 0;
-  // max-width: 17rem;
+.wrapper #sidebar {
   transition: all 2s;
   position: fixed;
   background-color: #324150;
   height: 100%;
-  width: 17rem;
+  width: 0;
   top: 0;
   left: 0;
   z-index: 1;
-  padding-top: 60px;
-  transition: 0.5s;
+  padding-top: 5rem;
+  transition: all 0.5s ease-in-out;
+
+  & ul {
+    display: none;
+  }
+
+  & ul li:first-child {
+    border: none;
+  }
+
+  & ul li:nth-child(2) {
+    border: none;
+  }
 
   & ul li {
     margin: 1rem 1rem 1rem $li-left-margin;
@@ -110,4 +115,23 @@ $li-left-margin: 2rem;
 .has-list-active {
   opacity: 1;
   height: auto;
+}
+
+.active-sidebar {
+  width: 17rem;
+}
+
+.closebtn {
+  color: #b4bcc8;
+  width: 70%;
+  font-weight: 100;
+  font-family: inherit;
+  position: absolute;
+  top: 2rem;
+  left: 77%;
+  cursor: pointer;
+}
+
+#IdPortfolio {
+  transition: all 0.5s ease-in-out;
 }
