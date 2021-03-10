@@ -49,7 +49,6 @@ export default {
 			document.getElementById("sidebar").style.width = "17rem";
 			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 			setTimeout(() => {
-				debugger;
 				document.getElementsByClassName("sidebar--parent")[0].style.display = "block";
 			}, 500);
 			document.getElementById("IdPortfolio").style.marginLeft = "17rem";

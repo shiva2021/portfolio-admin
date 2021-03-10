@@ -12,19 +12,19 @@ $li-left-margin: 2rem;
   padding-top: 5rem;
   transition: all 0.5s ease-in-out;
 
-  & ul {
+  & .sidebar--parent {
     display: none;
   }
 
-  & ul li:first-child {
+  & .sidebar--parent li:first-child {
     border: none;
   }
 
-  & ul li:nth-child(2) {
+  & .sidebar--parent li:nth-child(2) {
     border: none;
   }
 
-  & ul li {
+  & .sidebar--parent li {
     margin: 1rem 1rem 1rem $li-left-margin;
     padding-top: 1rem;
     border-top: 1px solid #3d4957;
@@ -123,7 +123,6 @@ $li-left-margin: 2rem;
 
 .closebtn {
   color: #b4bcc8;
-  width: 70%;
   font-weight: 100;
   font-family: inherit;
   position: absolute;
