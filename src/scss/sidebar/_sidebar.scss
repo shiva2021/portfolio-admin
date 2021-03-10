@@ -112,18 +112,11 @@ body {
 
 // Add transtion to the sidebar menu items
 .child-list {
-  height: 0;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease 0.15s;
-  -moz-transition: all 0.3s ease 0.15s;
-  -o-transition: all 0.3s ease 0.15s;
-  -ms-transition: all 0.3s ease 0.15s;
-  transition: all 0.3s ease 0.15s;
-}
+  display: none;
 
-.has-list-active {
-  opacity: 1;
-  height: auto;
+  &.has-list-active {
+    display: block;
+  }
 }
 
 .active-sidebar {
@@ -142,6 +135,9 @@ body {
   &:hover {
     color: white;
   }
+}
+
+@media only screen and (max-width: 600px) {
 }
 
 #IdPortfolio {

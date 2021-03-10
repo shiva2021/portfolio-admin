@@ -2,7 +2,11 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<ul id="idsidebar--parent" class="sidebar--parent">
-				<li href="javascript:void(0)" class="closebtn is-size-3" @click="closeNav">&times;</li>
+				<li href="javascript:void(0)" class="closebtn is-size-3" @click="closeNav">
+					<div class="has-text-right">
+						&times;
+					</div>
+				</li>
 				<li v-for="(item, i) in navitems" :key="i" :data-target="item.target" class="has-children">
 					<div class="is-flex">
 						<a href="javascript:void(0)" @click.prevent="onItemClick(item)">
@@ -55,35 +59,38 @@ export default {
 
 		if ($sidebarDropdowns.length > 0) {
 			$sidebarDropdowns.forEach((el) => {
-				el.addEventListener("click", () => {
-					const target = el.dataset.target || el.dataset.child;
-					const $target = document.getElementById(target);
-
-					if ($target && target !== "true") {
-						$target.classList.toggle("has-list-active");
-
-						//Rotate Icon
-						let icon = el.getElementsByClassName("left-icon") ? el.getElementsByClassName("left-icon")[`iconId${target}`] : "";
-
-						if (icon) {
-							if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
-								icon.classList.toggle("rotate-icon");
-							} else if (icon.classList.contains("rotate-icon")) {
-								icon.classList.add("rotate-icon-rev");
-								icon.classList.remove("rotate-icon");
-							} else {
-								icon.classList.add("rotate-icon");
-								icon.classList.remove("rotate-icon-rev");
-							}
-						}
-					}
-				});
+				el.addEventListener("click", this.toggleMenu.bind(this));
 			});
 		}
 	},
 	methods: {
 		onItemClick(item) {
 			if (item.children.length === 0) this.$emit("onNavigate", item);
+		},
+
+		toggleMenu(e) {
+			let el = e.currentTarget;
+			const target = el.dataset.target || el.dataset.child;
+			const $target = document.getElementById(target);
+
+			if ($target && target !== "true") {
+				$target.classList.toggle("has-list-active");
+
+				//Rotate Icon
+				let icon = el.getElementsByClassName("left-icon") ? el.getElementsByClassName("left-icon")[`iconId${target}`] : "";
+
+				if (icon) {
+					if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
+						icon.classList.toggle("rotate-icon");
+					} else if (icon.classList.contains("rotate-icon")) {
+						icon.classList.add("rotate-icon-rev");
+						icon.classList.remove("rotate-icon");
+					} else {
+						icon.classList.add("rotate-icon");
+						icon.classList.remove("rotate-icon-rev");
+					}
+				}
+			}
 		},
 
 		/** Generic code for closing the sidebar

@@ -37,6 +37,20 @@ export default {
 					icon: "fas fa-heading",
 					hasChevron: true,
 				},
+				{
+					name: "Authorizations",
+					target: "roles",
+					children: [
+						{
+							name: "User Roles",
+							children: [],
+							icon: "fas fa-plus",
+							hasChevron: false,
+						},
+					],
+					icon: "fas fa-heading",
+					hasChevron: true,
+				},
 			],
 		};
 	},
