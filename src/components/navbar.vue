@@ -71,7 +71,7 @@ export default {
 
 	mounted() {
 		/** The jQuery will trigger only at mobile viewport */
-		if (window.matchMedia("(max-width: 767px)").matches) {
+		if (window.matchMedia("(max-width: 769px)").matches) {
 			const $navDropdowns = document.querySelectorAll(".navbar-item.has-dropdown");
 			if ($navDropdowns.length > 0) {
 				// Add a click event on each of them
