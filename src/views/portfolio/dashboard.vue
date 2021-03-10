@@ -43,21 +43,36 @@ export default {
 	methods: {
 		onNavigate(item) {
 			console.log(item.name);
+			if (window.matchMedia("(max-width: 769px)").matches) {
+				this.collapseSidebar();
+			}
 		},
 
 		openNav() {
+			console.log(window.screen.width);
 			document.getElementById("sidebar").classList.add("has-increased-width");
+
+			/** On mobile/tablet screens, the width must occupy the complete width of the screen */
+			if (window.matchMedia("(max-width: 769px)").matches) {
+				document.getElementById("sidebar").style.width = window.screen.width + "px";
+			}
+
 			document.body.classList.add("has-dull-body");
 			setTimeout(() => {
-				document.getElementsByClassName("sidebar--parent")[0].style.display = "block";
+				document.getElementById("idsidebar--parent").classList.add("is-not-hidden");
 			}, 500);
 			document.getElementById("IdPortfolio").classList.add("margin-shift");
 		},
 
 		collapseSidebar() {
 			document.getElementById("sidebar").classList.remove("has-increased-width");
+
+			/** On mobile/tablet screens, the width must be explicitely set to 0 */
+			if (window.matchMedia("(max-width: 769px)").matches) {
+				document.getElementById("sidebar").style.width = "0px";
+			}
 			document.body.classList.remove("has-dull-body");
-			document.getElementsByClassName("sidebar--parent")[0].style.display = "none";
+			document.getElementById("idsidebar--parent").classList.remove("is-not-hidden");
 			document.getElementById("IdPortfolio").classList.remove("margin-shift");
 		},
 	},

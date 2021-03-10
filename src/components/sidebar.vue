@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
-			<ul class="sidebar--parent">
+			<ul id="idsidebar--parent" class="sidebar--parent">
 				<li href="javascript:void(0)" class="closebtn is-size-3" @click="closeNav">&times;</li>
 				<li v-for="(item, i) in navitems" :key="i" :data-target="item.target" class="has-children">
 					<div class="is-flex">
@@ -85,6 +85,20 @@ export default {
 		onItemClick(item) {
 			if (item.children.length === 0) this.$emit("onNavigate", item);
 		},
+
+		/** Generic code for closing the sidebar
+		closeNav() {
+			document.getElementById("sidebar").classList.remove("has-increased-width");
+
+			// On mobile/tablet screens, the width must be explicitely set to 0
+			if (window.matchMedia("(max-width: 769px)").matches) {
+				document.getElementById("sidebar").style.width = "0px";
+			}
+			document.body.classList.remove("has-dull-body");
+			document.getElementById("idsidebar--parent").classList.remove("is-not-hidden");
+			document.getElementById("IdPortfolio").classList.remove("margin-shift");
+		},
+		 */
 	},
 };
 </script>
