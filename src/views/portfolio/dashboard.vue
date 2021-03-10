@@ -46,19 +46,19 @@ export default {
 		},
 
 		openNav() {
-			document.getElementById("sidebar").style.width = "17rem";
-			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+			document.getElementById("sidebar").classList.add("has-increased-width");
+			document.body.classList.add("has-dull-body");
 			setTimeout(() => {
 				document.getElementsByClassName("sidebar--parent")[0].style.display = "block";
 			}, 500);
-			document.getElementById("IdPortfolio").style.marginLeft = "17rem";
+			document.getElementById("IdPortfolio").classList.add("margin-shift");
 		},
 
 		collapseSidebar() {
-			document.getElementById("sidebar").style.width = "0";
-			document.body.style.backgroundColor = "white";
+			document.getElementById("sidebar").classList.remove("has-increased-width");
+			document.body.classList.remove("has-dull-body");
 			document.getElementsByClassName("sidebar--parent")[0].style.display = "none";
-			document.getElementById("IdPortfolio").style.marginLeft = "0";
+			document.getElementById("IdPortfolio").classList.remove("margin-shift");
 		},
 	},
 };

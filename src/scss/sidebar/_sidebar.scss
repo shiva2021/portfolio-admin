@@ -1,4 +1,10 @@
-$li-left-margin: 2rem;
+body {
+  transition: all 0.2s ease-in;
+
+  &.has-dull-body {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
 
 .wrapper #sidebar {
   transition: all 2s;
@@ -11,6 +17,10 @@ $li-left-margin: 2rem;
   z-index: 1;
   padding-top: 5rem;
   transition: all 0.5s ease-in-out;
+
+  &.has-increased-width {
+    width: 17rem;
+  }
 
   & .sidebar--parent {
     display: none;
@@ -25,7 +35,7 @@ $li-left-margin: 2rem;
   }
 
   & .sidebar--parent li {
-    margin: 1rem 1rem 1rem $li-left-margin;
+    margin: 1rem 1rem 1rem 2rem;
     padding-top: 1rem;
     border-top: 1px solid #3d4957;
 
@@ -141,4 +151,8 @@ $li-left-margin: 2rem;
 
 #IdPortfolio {
   transition: all 0.5s ease-in-out;
+
+  &.margin-shift {
+    margin-left: 17rem;
+  }
 }
