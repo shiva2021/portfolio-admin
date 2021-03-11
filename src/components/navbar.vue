@@ -1,9 +1,9 @@
 <template>
 	<nav class="navbar nav-background-color" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand ml-4">
-			<a class="navbar-item" href="https://bulma.io">
+			<router-link class="navbar-item" to="/">
 				<h1 class="is-size-5">Admin App</h1>
-			</a>
+			</router-link>
 
 			<a role="button" class="navbar-burger" @click="toggle" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 				<span aria-hidden="true"></span>

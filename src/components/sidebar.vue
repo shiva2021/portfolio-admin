@@ -75,8 +75,9 @@ export default {
 	methods: {
 		onItemClick(item) {
 			if (item.children.length === 0) {
-				this.$emit("onclick", item);
+				debugger;
 				this.toggle();
+				this.$emit("onclick", item);
 			}
 		},
 
@@ -89,11 +90,11 @@ export default {
 				document.getElementById("sidebar").style.width = window.screen.width + "px";
 			}
 
-			document.body.classList.add("has-dull-body");
+			// document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 			setTimeout(() => {
 				document.getElementById("idsidebar--parent").classList.add("is-not-hidden");
 			}, 500);
-			document.getElementById("IdPortfolio").classList.add("margin-shift");
+			document.getElementById("maincontent").classList.add("margin-shift");
 		},
 
 		collapseSidebar() {
@@ -103,9 +104,9 @@ export default {
 			if (window.matchMedia("(max-width: 769px)").matches) {
 				document.getElementById("sidebar").style.width = "0px";
 			}
-			document.body.classList.remove("has-dull-body");
+			// document.body.style.backgroundColor = "white";
 			document.getElementById("idsidebar--parent").classList.remove("is-not-hidden");
-			document.getElementById("IdPortfolio").classList.remove("margin-shift");
+			document.getElementById("maincontent").classList.remove("margin-shift");
 		},
 
 		toggleMenu(e) {

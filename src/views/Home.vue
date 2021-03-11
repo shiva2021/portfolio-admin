@@ -45,7 +45,7 @@ export default {
 	methods: {
 		navigate(app) {
 			console.log(app);
-			this.$router.push(`/app/${app.text}/dashboard`);
+			this.$router.push(`/app/${app.text}`);
 		},
 	},
 };

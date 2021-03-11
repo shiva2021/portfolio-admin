@@ -2,7 +2,7 @@ body {
   transition: all 0.2s ease-in;
 
   &.has-dull-body {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4) !important;
   }
 }
 
@@ -147,10 +147,12 @@ body {
   }
 }
 
-#IdPortfolio {
+#maincontent {
   transition: all 0.5s ease-in-out;
 
   &.margin-shift {
     margin-left: 17rem;
+    opacity: 0.3;
+    pointer-events: none;
   }
 }

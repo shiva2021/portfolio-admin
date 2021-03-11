@@ -1,13 +1,11 @@
 <template>
 	<div class="dashboard">
 		<Sidebar @onclick="onItemClick" :isOpen="isNavOpen" @close="toggleNav" :navitems="items"></Sidebar>
-		<div id="IdPortfolio" class="">
+		<div id="maincontent" class="">
 			<div class="menu p-3">
 				<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">&#9776;</span>
 			</div>
-			<section class="section is-medium has-background-dark">
-				<h1 class="title">Dashboard</h1>
-			</section>
+			<router-view></router-view>
 		</div>
 	</div>
 </template>
@@ -28,7 +26,7 @@ export default {
 			items: [
 				{
 					name: "Dashboard",
-					path: "dashboard",
+					path: "",
 					target: "",
 					children: [],
 					icon: "fas fa-chart-line",
