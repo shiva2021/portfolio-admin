@@ -56,6 +56,12 @@ export default {
 							children: [],
 							icon: "fas fa-plus",
 						},
+						{
+							name: "User Permissions",
+							path: "permissions",
+							children: [],
+							icon: "fas fa-plus",
+						},
 					],
 					icon: "fas fa-heading",
 				},

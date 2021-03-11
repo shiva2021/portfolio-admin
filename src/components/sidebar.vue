@@ -20,7 +20,7 @@
 					<ul data-child="true" :id="item.target" class="child-list" v-if="item.children.length > 0">
 						<li v-for="(child, i) in item.children" :key="i">
 							<div class="is-flex">
-								<a href="javascript:void(0)" @click.prevent="onItemClick(child)">
+								<a href="javascript:void(0)" class="full-width" @click.prevent="onItemClick(child)">
 									<i :class="`${child.icon} is-size-6 mr-3 font-color`"></i>
 									<span class="is-size-6">{{ child.name }}</span>
 								</a>
