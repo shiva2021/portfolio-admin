@@ -69,28 +69,7 @@ export default {
 		},
 
 		toggleMenu(e) {
-			let el = e.currentTarget;
-			const target = el.dataset.target || el.dataset.child;
-			const $target = document.getElementById(target);
-
-			if ($target && target !== "true") {
-				$target.classList.toggle("has-list-active");
-
-				//Rotate Icon
-				let icon = el.getElementsByClassName("left-icon") ? el.getElementsByClassName("left-icon")[`iconId${target}`] : "";
-
-				if (icon) {
-					if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
-						icon.classList.toggle("rotate-icon");
-					} else if (icon.classList.contains("rotate-icon")) {
-						icon.classList.add("rotate-icon-rev");
-						icon.classList.remove("rotate-icon");
-					} else {
-						icon.classList.add("rotate-icon");
-						icon.classList.remove("rotate-icon-rev");
-					}
-				}
-			}
+			this.$emit("toggleMenu", e);
 		},
 
 		/** Generic code for closing the sidebar

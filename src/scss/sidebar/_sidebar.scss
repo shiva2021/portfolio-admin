@@ -84,7 +84,7 @@ body {
 
 .rotate-icon {
   transform: rotate(-90deg);
-  animation: roll 0.5s;
+  animation: roll 0.2s;
 }
 
 @keyframes roll {
@@ -98,7 +98,7 @@ body {
 
 .rotate-icon-rev {
   transform: rotate(0);
-  animation: roll-rev 0.5s;
+  animation: roll-rev 0.2s;
 }
 
 @keyframes roll-rev {
