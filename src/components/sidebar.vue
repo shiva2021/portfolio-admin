@@ -14,7 +14,7 @@
 							<span class="is-size-6">{{ item.name }}</span>
 						</a>
 						<div :data-target="item.target" class="has-text-right arrow">
-							<i :id="`iconId${item.target}`" v-if="item.hasChevron" class="fas fa-chevron-left left-icon font-color"></i>
+							<i :id="`iconId${item.target}`" v-if="item.children.length > 0" class="fas fa-chevron-left left-icon font-color"></i>
 						</div>
 					</div>
 					<ul data-child="true" :id="item.target" class="child-list" v-if="item.children.length > 0">

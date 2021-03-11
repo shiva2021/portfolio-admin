@@ -1,8 +1,8 @@
 <template>
 	<div class="dashboard">
 		<Sidebar @toggleMenu="toggleMenu" :closeNav="collapseSidebar" :navitems="items" @onNavigate="onNavigate"></Sidebar>
-		<div id="IdPortfolio">
-			<span style="font-size: 30px; cursor: pointer;" @click="openNav">&#9776; open</span>
+		<div id="IdPortfolio" class="pl-5 pt-3">
+			<span class="is-size-4" style="cursor: pointer;" @click="openNav">&#9776;</span>
 		</div>
 	</div>
 </template>
@@ -21,7 +21,6 @@ export default {
 					target: "",
 					children: [],
 					icon: "fas fa-chart-line",
-					hasChevron: false,
 				},
 				{
 					name: "Manage Content",
@@ -31,11 +30,9 @@ export default {
 							name: "Add Content",
 							children: [],
 							icon: "fas fa-plus",
-							hasChevron: false,
 						},
 					],
 					icon: "fas fa-heading",
-					hasChevron: true,
 				},
 				{
 					name: "Authorizations",
@@ -45,11 +42,9 @@ export default {
 							name: "User Roles",
 							children: [],
 							icon: "fas fa-plus",
-							hasChevron: false,
 						},
 					],
 					icon: "fas fa-heading",
-					hasChevron: true,
 				},
 			],
 		};
