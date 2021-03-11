@@ -75,9 +75,8 @@ export default {
 	methods: {
 		onItemClick(item) {
 			if (item.children.length === 0) {
-				console.log(`/app/${this.currentApp.text}/${item.path}`);
+				this.$emit("onclick", item);
 
-				this.$router.push(`/app/${this.currentApp.text}/${item.path}`);
 				if (window.matchMedia("(max-width: 769px)").matches) {
 					this.toggle();
 				}

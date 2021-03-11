@@ -1,6 +1,6 @@
 <template>
 	<div class="dashboard">
-		<Sidebar :isOpen="isNavOpen" @close="toggleNav" :navitems="items"></Sidebar>
+		<Sidebar @onclick="onItemClick" :isOpen="isNavOpen" @close="toggleNav" :navitems="items"></Sidebar>
 		<div id="IdPortfolio" class="">
 			<div class="menu p-3">
 				<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">&#9776;</span>
@@ -66,6 +66,11 @@ export default {
 	methods: {
 		toggleNav() {
 			this.isNavOpen = !this.isNavOpen;
+		},
+
+		onItemClick(item) {
+			console.log(`/app/${this.currentApp.text}/${item.path}`);
+			this.$router.push(`/app/${this.currentApp.text}/${item.path}`);
 		},
 	},
 };
