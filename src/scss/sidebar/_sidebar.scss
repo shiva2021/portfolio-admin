@@ -9,7 +9,7 @@ body {
 .wrapper #sidebar {
   transition: all 2s;
   position: fixed;
-  background-color: #324150;
+  background-color: $sidenav-background-color;
   height: 100%;
   width: 0;
   top: 0;
@@ -41,7 +41,7 @@ body {
   & .sidebar--parent li {
     margin: 1rem 1rem 1rem 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #3d4957;
+    border-top: 1px solid $sidenav-item-top-border-color;
 
     & div a {
       color: #b4bcc8;
@@ -55,7 +55,7 @@ body {
     }
 
     & a:hover {
-      color: #f1f1f1;
+      color: $sidenav-item-active-color;
     }
 
     & div .arrow {
