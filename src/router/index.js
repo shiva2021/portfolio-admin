@@ -24,7 +24,7 @@ const routes = [
     path: '/app',
     name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "app-home" */ '../views/apphome.vue')
+      return import(/* webpackChunkName: "app-home" */ '../views/apps/apps.vue')
     },
     children: [...pfRoutes, ...btRoutes]
   }

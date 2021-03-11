@@ -1,12 +1,9 @@
 <template>
 	<div class="dashboard">
 		<Sidebar :isOpen="isNavOpen" @close="toggleNav" :navitems="items"></Sidebar>
-		<div id="IdPortfolio" class="pt-3">
-			<div class="menu pl-3 pb-3">
-				<h1 class="subtitle">
-					<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">&#9776;</span>
-					Menu
-				</h1>
+		<div id="IdPortfolio" class="">
+			<div class="menu p-3">
+				<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">&#9776;</span>
 			</div>
 			<section class="section is-medium has-background-dark">
 				<h1 class="title">Dashboard</h1>
