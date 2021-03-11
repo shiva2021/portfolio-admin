@@ -11,6 +11,13 @@ export default {
 	created() {
 		console.log(this.currentApp);
 	},
+	beforeRouteEnter(to, from, next) {
+		if (to.name === "app-home") {
+			next({ path: "/" });
+		} else {
+			next();
+		}
+	},
 };
 </script>
 
