@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<ul id="idsidebar--parent" class="sidebar--parent">
-				<li href="javascript:void(0)" class="closebtn is-size-3" @click="closeNav">
+				<li href="javascript:void(0)" class="closebtn is-size-3" @click="toggle">
 					<div class="has-text-right">
 						&times;
 					</div>
@@ -45,14 +45,23 @@ export default {
 			type: Array,
 			required: true,
 		},
-		closeNav: {
-			type: Function,
-			required: true,
+		isOpen: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
 	data() {
 		return {};
+	},
+	watch: {
+		isOpen(bVal) {
+			if (bVal) {
+				this.openNav();
+			} else {
+				this.collapseSidebar();
+			}
+		},
 	},
 	mounted() {
 		let $sidebarDropdowns = document.querySelectorAll(".arrow");
@@ -65,18 +74,36 @@ export default {
 	},
 	methods: {
 		onItemClick(item) {
-			if (item.children.length === 0) this.$emit("onNavigate", item);
+			if (item.children.length === 0) {
+				console.log(`/app/${this.currentApp.text}/${item.path}`);
+
+				this.$router.push(`/app/${this.currentApp.text}/${item.path}`);
+				if (window.matchMedia("(max-width: 769px)").matches) {
+					this.toggle();
+				}
+			}
 		},
 
-		toggleMenu(e) {
-			this.$emit("toggleMenu", e);
+		openNav() {
+			console.log(window.screen.width);
+			document.getElementById("sidebar").classList.add("has-increased-width");
+
+			/** On mobile/tablet screens, the width must occupy the complete width of the screen */
+			if (window.matchMedia("(max-width: 769px)").matches) {
+				document.getElementById("sidebar").style.width = window.screen.width + "px";
+			}
+
+			document.body.classList.add("has-dull-body");
+			setTimeout(() => {
+				document.getElementById("idsidebar--parent").classList.add("is-not-hidden");
+			}, 500);
+			document.getElementById("IdPortfolio").classList.add("margin-shift");
 		},
 
-		/** Generic code for closing the sidebar
-		closeNav() {
+		collapseSidebar() {
 			document.getElementById("sidebar").classList.remove("has-increased-width");
 
-			// On mobile/tablet screens, the width must be explicitely set to 0
+			/** On mobile/tablet screens, the width must be explicitely set to 0 */
 			if (window.matchMedia("(max-width: 769px)").matches) {
 				document.getElementById("sidebar").style.width = "0px";
 			}
@@ -84,7 +111,59 @@ export default {
 			document.getElementById("idsidebar--parent").classList.remove("is-not-hidden");
 			document.getElementById("IdPortfolio").classList.remove("margin-shift");
 		},
-		 */
+
+		toggleMenu(e) {
+			let el = e.currentTarget;
+			const target = el.dataset.target || el.dataset.child;
+			const $target = document.getElementById(target);
+
+			if ($target && target !== "true") {
+				$target.classList.toggle("has-list-active");
+
+				//Rotate Icon
+				this.rotateArrow(el, target);
+			}
+
+			//Close other opened nodes (if any)
+			this.closeOtherNodes(target);
+		},
+
+		closeOtherNodes(target) {
+			let openNodes = document.getElementsByClassName("has-list-active");
+			if (openNodes.length > 1) {
+				$.each(openNodes, (i, el) => {
+					let parent = el ? el.parentElement : "";
+					if (parent) {
+						let parentTarget = parent.dataset.target;
+						if (target !== parentTarget) {
+							el.classList.toggle("has-list-active");
+
+							//rotate icon
+							this.rotateArrow(parent, parentTarget);
+						}
+					}
+				});
+			}
+		},
+
+		rotateArrow(el, target) {
+			let icon = el.getElementsByClassName("left-icon") ? el.getElementsByClassName("left-icon")[`iconId${target}`] : "";
+
+			if (icon) {
+				if (!icon.classList.contains("rotate-icon") && !icon.classList.contains("rotate-icon-rev")) {
+					icon.classList.toggle("rotate-icon");
+				} else if (icon.classList.contains("rotate-icon")) {
+					icon.classList.add("rotate-icon-rev");
+					icon.classList.remove("rotate-icon");
+				} else {
+					icon.classList.add("rotate-icon");
+					icon.classList.remove("rotate-icon-rev");
+				}
+			}
+		},
+		toggle() {
+			this.$emit("close", false);
+		},
 	},
 };
 </script>
