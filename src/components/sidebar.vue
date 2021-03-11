@@ -76,10 +76,7 @@ export default {
 		onItemClick(item) {
 			if (item.children.length === 0) {
 				this.$emit("onclick", item);
-
-				if (window.matchMedia("(max-width: 769px)").matches) {
-					this.toggle();
-				}
+				this.toggle();
 			}
 		},
 
