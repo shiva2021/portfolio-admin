@@ -3,7 +3,9 @@
 		<Sidebar @onclick="onItemClick" :isOpen="isNavOpen" @close="toggleNav" :navitems="items"></Sidebar>
 		<div id="maincontent" class="">
 			<div class="menu p-3">
-				<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">&#9776;</span>
+				<span class="is-size-4" style="cursor: pointer;" @click="toggleNav">
+					<i class="fas fa-bars"></i>
+				</span>
 			</div>
 			<router-view></router-view>
 		</div>

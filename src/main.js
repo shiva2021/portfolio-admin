@@ -5,7 +5,9 @@ import store from './store'
 import Buefy from 'buefy'
 import jQuery from 'jquery'
 import '@mdi/font/css/materialdesignicons.css'
+import CKEditor from '@ckeditor/ckeditor5-vue2';
 
+Vue.use(CKEditor);
 
 Vue.use(Buefy)
 require('@/scss/_main.scss');
