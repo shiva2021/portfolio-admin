@@ -1,2 +1,10 @@
 @import "./sidebar/sidebar";
 @import "./editor/ckeditor";
+
+.has-background-secondary {
+  background-color: $secondary !important;
+}
+
+.clickable {
+  cursor: pointer;
+}

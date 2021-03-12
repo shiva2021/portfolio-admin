@@ -35,15 +35,9 @@ export default {
 				},
 				{
 					name: "Manage Content",
-					target: "content",
-					children: [
-						{
-							name: "Add Content",
-							path: "addcontent",
-							children: [],
-							icon: "fas fa-plus",
-						},
-					],
+					target: "",
+					path: "content",
+					children: [],
 					icon: "fas fa-heading",
 				},
 				{

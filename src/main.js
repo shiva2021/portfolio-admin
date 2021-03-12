@@ -6,6 +6,7 @@ import Buefy from 'buefy'
 import jQuery from 'jquery'
 import '@mdi/font/css/materialdesignicons.css'
 import CKEditor from '@ckeditor/ckeditor5-vue2';
+import axios from './axios'
 
 Vue.use(CKEditor);
 
@@ -13,6 +14,9 @@ Vue.use(Buefy)
 require('@/scss/_main.scss');
 
 window.$ = jQuery;
+
+Vue.prototype.$axios = axios;
+
 
 Vue.filter("AWS", (string) => {
   return `https://barter-vue-app.s3.ap-south-1.amazonaws.com/${string}`;

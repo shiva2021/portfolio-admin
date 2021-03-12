@@ -1,5 +1,5 @@
 const dashboard = () => import('../../views/apps/portfolio/dashboard.vue')
-const addContent = () => import('../../components/portfolio/addcontent.vue')
+const content = () => import('../../components/portfolio/content.vue')
 const pfRoutes = [
   {
     path: 'portfolio',
@@ -7,9 +7,9 @@ const pfRoutes = [
     component: dashboard,
     children: [
       {
-        path: 'addcontent',
-        name: 'portfolio-add-content',
-        component: addContent
+        path: 'content',
+        name: 'portfolio-content',
+        component: content
       }
     ]
   }

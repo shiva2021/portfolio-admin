@@ -6,6 +6,8 @@ $primary-invert: findColorInvert($primary);
 $twitter: #4099ff;
 $twitter-invert: findColorInvert($twitter);
 
+$secondary: #324150;
+
 $dark-slate-blue: #3d348b;
 
 // Lists and maps
@@ -91,7 +93,7 @@ $navbar-dropdown-background-color: $primary;
 $font-color: #606c7d;
 
 //sidebar variables
-$sidenav-background-color: #324150;
+$sidenav-background-color: $secondary;
 $sidenav-item-color: #b4bcc8;
 $sidenav-item-active-background-color: #273643;
 $sidenav-item-active-color: #f1f1f1;

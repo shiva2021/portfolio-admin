@@ -75,7 +75,6 @@ export default {
 	methods: {
 		onItemClick(item) {
 			if (item.children.length === 0) {
-				debugger;
 				this.toggle();
 				this.$emit("onclick", item);
 			}
