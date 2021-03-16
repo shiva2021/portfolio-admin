@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import pfRoutes from './portfolio';
 import btRoutes from './barter';
 import store from '../store'
+const home = () => import('../views/home.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,9 +17,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: function () {
-      return import(/* webpackChunkName: "home" */ '@/views/home.vue')
-    },
+    component: home
   },
   {
     path: '/app',
