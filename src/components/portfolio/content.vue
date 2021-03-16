@@ -55,7 +55,7 @@ export default {
 	},
 	async created() {
 		try {
-			let { data } = await this.$axios.get("/api/rx/PF/Page");
+			let { data } = await this.$axios.get("/api/rx/PF/PfPage");
 			this.sections = data;
 		} catch (error) {
 			console.log(error);
@@ -64,7 +64,7 @@ export default {
 	methods: {
 		async onAdd() {
 			try {
-				let { data } = this.$axios.post("/api/portfolio/add/page", { page: this.page });
+				let { data } = await this.$axios.post("/api/portfolio/add/page", { page: this.page });
 				this.sections = data;
 				this.toggle();
 			} catch (error) {
