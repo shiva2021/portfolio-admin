@@ -10,21 +10,21 @@ const routes = [
     path: '/login',
     name: 'login',
     component: function () {
-      return import(/* webpackChunkName: "login" */ '../views/login.vue')
+      return import(/* webpackChunkName: "login" */ '@/views/login.vue')
     }
   },
   {
     path: "/",
     name: "home",
     component: function () {
-      return import(/* webpackChunkName: "home" */ '../views/home.vue')
+      return import(/* webpackChunkName: "home" */ '@/views/home.vue')
     },
   },
   {
     path: '/app',
     name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "app-home" */ '../views/apps/apps.vue')
+      return import(/* webpackChunkName: "app-home" */ '@/views/apps/apps.vue')
     },
     children: [...pfRoutes, ...btRoutes]
   }

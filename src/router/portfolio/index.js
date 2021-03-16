@@ -1,5 +1,5 @@
-const dashboard = () => import('../../views/apps/portfolio/dashboard.vue')
-const content = () => import('../../components/portfolio/content.vue')
+const dashboard = () => import('@/views/apps/portfolio/dashboard.vue')
+const content = () => import('@/components/portfolio/content.vue')
 const pfRoutes = [
   {
     path: 'portfolio',
