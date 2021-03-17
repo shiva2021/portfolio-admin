@@ -1,10 +1,10 @@
-const dashboard = () => import('@/views/apps/portfolio/dashboard.vue')
+const Dashboard = () => import('@/views/apps/portfolio/Dashboard.vue')
 const content = () => import('@/components/portfolio/content.vue')
 const pfRoutes = [
   {
     path: 'portfolio',
     name: 'portfolio-home',
-    component: dashboard,
+    component: Dashboard,
     children: [
       {
         path: 'content',

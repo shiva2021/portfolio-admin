@@ -17,14 +17,14 @@ const routes = [
     path: '/login',
     name: 'login',
     component: function () {
-      return import(/* webpackChunkName: "login" */ '@/views/login.vue')
+      return import(/* webpackChunkName: "login" */ '@/views/Login.vue')
     }
   },
   {
     path: '/app',
     name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "app-home" */ '@/views/apps/apps.vue')
+      return import(/* webpackChunkName: "app-home" */ '@/views/apps/Apps.vue')
     },
     children: [...pfRoutes, ...btRoutes]
   }
