@@ -3,12 +3,16 @@ const path = require("path");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const compression = require("compression");
 const port = process.env.PORT || 4000;
-const stage = process.env.STAGE || "dev";
+const cors = require('cors')
 const app = express();
-const api = process.env.API_URL || "http://127.0.0.1:3333/api";
-// `https://hub.springer-sbm.com/${stage}/snics/services/api`;
-// "http://localhost:3000/api";
-//"https://snics-api-dev.springernature.app/api";
+const api = process.env.API_URL || "https://pf-admin-api.herokuapp.com/api";
+
+let corsOptions = {
+	origin: process.env.API_ORIGIN || 'https://pf-admin-api.herokuapp.com',
+	optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 
 app.use(compression());
 
@@ -17,6 +21,8 @@ app.use(express.static(__dirname + "/dist"));
 const options = {
 	target: api,
 	changeOrigin: true,
+
+
 	ws: true,
 	pathRewrite: {
 		"^/api": "/",
