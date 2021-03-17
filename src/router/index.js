@@ -8,9 +8,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'entry',
     component: function () {
-      return import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
+      return import( /* webpackChunkName: "group-foo" */ '../views/entry.vue')
     }
   },
   {
