@@ -10,7 +10,7 @@ const routes = [
     path: '/',
     name: 'entry',
     component: function () {
-      return import( /* webpackChunkName: "group-foo" */ '../views/entry.vue')
+      return import( /* webpackChunkName: "group-foo" */ '@/views/Home.vue')
     }
   },
   {
