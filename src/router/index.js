@@ -7,8 +7,8 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    name: "home",
+    path: '/',
+    name: 'home',
     component: function () {
       return import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
     }
