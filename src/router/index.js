@@ -3,22 +3,23 @@ import VueRouter from 'vue-router'
 import pfRoutes from './portfolio';
 import btRoutes from './barter';
 import store from '../store'
-// const home = () => import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: '/login',
+    name: 'login',
     component: function () {
       return import(/* webpackChunkName: "login" */ '@/views/login.vue')
     }
   },
-  // {
-  //   path: "/",
-  //   name: "home",
-  //   component: home
-  // },
+  {
+    path: "/",
+    name: "home",
+    component: function () {
+      return import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
+    }
+  },
   {
     path: '/app',
     name: 'app-home',
