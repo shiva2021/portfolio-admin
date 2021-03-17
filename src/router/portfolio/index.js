@@ -1,4 +1,4 @@
-const Dashboard = () => import('@/views/apps/portfolio/Dashboard.vue')
+const Dashboard = () => import('@/views/PFDashboard.vue')
 const content = () => import('@/components/portfolio/content.vue')
 const pfRoutes = [
   {

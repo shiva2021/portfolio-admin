@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'entry',
+    name: 'home',
     component: function () {
       return import( /* webpackChunkName: "group-foo" */ '@/views/Home.vue')
     }
@@ -24,7 +24,7 @@ const routes = [
     path: '/app',
     name: 'app-home',
     component: function () {
-      return import(/* webpackChunkName: "app-home" */ '@/views/apps/Apps.vue')
+      return import(/* webpackChunkName: "app-home" */ '@/views/Apps.vue')
     },
     children: [...pfRoutes, ...btRoutes]
   }
