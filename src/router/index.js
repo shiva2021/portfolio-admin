@@ -7,17 +7,17 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login',
-    name: 'login',
-    component: function () {
-      return import(/* webpackChunkName: "login" */ '@/views/login.vue')
-    }
-  },
-  {
     path: "/",
     name: "home",
     component: function () {
       return import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: function () {
+      return import(/* webpackChunkName: "login" */ '@/views/login.vue')
     }
   },
   {
