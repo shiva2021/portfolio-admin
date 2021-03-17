@@ -3,15 +3,16 @@ import VueRouter from 'vue-router'
 import pfRoutes from './portfolio';
 import btRoutes from './barter';
 import store from '../store'
+
+import Home from "../views/home.vue";
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: function () {
-      return import( /* webpackChunkName: "group-foo" */ '@/views/home.vue')
-    }
+    component: Home
   },
   {
     path: '/login',
