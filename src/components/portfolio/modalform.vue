@@ -37,9 +37,6 @@ export default {
 		close() {
 			this.$emit("close");
 		},
-		onInput(val) {
-			this.$emit("input", val);
-		},
 	},
 };
 </script>
